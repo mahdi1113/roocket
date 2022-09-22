@@ -23,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $user = auth()->user()->name;
+        // alert()->success('شما لاگین هستید',"سلام $user")->persistent('باشه');
         return view('home');
     }
 }

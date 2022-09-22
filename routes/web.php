@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    alert()->success('how are you ? ','Message');
     return view('welcome');
 });
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes(['verify'=>true]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
+
+Route::get('secret',function(){
+    return 'secret';
+})->middleware(['auth','password.confirm']);
+
+Route::get('profile',[ProfileController::class,'index'])->name('profile');
+Route::get('profile/twoFactor',[ProfileController::class,'manageTwoFactor'])->name('profile.two.Factor');
+Route::post('profile/twoFactor',[ProfileController::class,'postManageTwoFactor'])->name('profile.manageTwoFactor');
