@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthTokenController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    alert()->success('how are you ? ','Message');
     return view('welcome');
 });
 
@@ -29,6 +29,13 @@ Route::get('secret',function(){
     return 'secret';
 })->middleware(['auth','password.confirm']);
 
+Route::middleware('auth')->group(function(){
 Route::get('profile',[ProfileController::class,'index'])->name('profile');
 Route::get('profile/twoFactor',[ProfileController::class,'manageTwoFactor'])->name('profile.two.Factor');
 Route::post('profile/twoFactor',[ProfileController::class,'postManageTwoFactor'])->name('profile.manageTwoFactor');
+Route::get('profile/twofacto/phone',[ProfileController::class,'getPhoneVerify'])->name('profile.2fa.phone');
+Route::post('profile/twofacto/phone',[ProfileController::class,'postPhoneVerify']);
+});
+
+Route::get('/auth/token',[AuthTokenController::class,'getToken'])->name('2fa.token');
+Route::post('/auth/token',[AuthTokenController::class,'postToken']);

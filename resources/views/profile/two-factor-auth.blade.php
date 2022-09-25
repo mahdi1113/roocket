@@ -5,18 +5,15 @@
 <hr>
 <form action="{{ route('profile.manageTwoFactor') }}" method="POST">
     @csrf
-    
-    <div class="form-group mt-3">
-        <label for="type">Type</label>
-        <select name="type" id="type" class="form-control">
-            <option value="off">off</option>
-            <option value="sms">sms</option>
+        <select name="type" class="form-select">
+            @foreach (config('twoFactore.types') as $key => $value)
+                <option class="form-control" value="{{ $key }}" {{auth()->user()->two_factore_type == $key ? 'selected' : '' }}>{{ $value }}</option>
+            @endforeach
         </select>
-    </div>
 
     <div class="form-group mt-3">
         <label for="phone">Phone</label>
-        <input type="text" name="phone" id="phone" class="form-control">
+        <input type="text" name="phone" id="phone" class="form-control" value="{{ old('phone') ?? Auth::user()->phone_number }}">
     </div>
 
     <div class="form-group">
