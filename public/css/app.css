@@ -1,4 +1,76 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
+@font-face {
+    font-family: Vazir;
+    src: url(/fonts/Vazir.eot?e16b14e500b2f4e6c5413514a00a6467);
+    src: url(/fonts/Vazir.eot?e16b14e500b2f4e6c5413514a00a6467?#iefix) format('embedded-opentype'),
+    url(/fonts/Vazir.woff2?c9f007a48cb77ab67c2495e35ab4a903) format('woff2'),
+    url(/fonts/Vazir.woff?9b82bf46c4f3717b2016f5d980357ca2) format('woff'),
+    url(/fonts/Vazir.ttf?86fc40c3d5016badb590b3a820fb2529) format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url(/fonts/Vazir-Bold.eot?ded93117fa76f99d882e3ee25821e54f);
+    src: url(/fonts/Vazir-Bold.eot?ded93117fa76f99d882e3ee25821e54f?#iefix) format('embedded-opentype'),
+    url(/fonts/Vazir-Bold.woff2?e17e5d28e9cb0a65c55d82c02b3aeb37) format('woff2'),
+    url(/fonts/Vazir-Bold.woff?3305d4003bd27a10827bc9dddd3fa47d) format('woff'),
+    url(/fonts/Vazir-Bold.ttf?1ec582b91fa8d13dd718db059a51d33c) format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url(/fonts/Vazir-Light.eot?06e0fe52d08623f11150caeb89139877);
+    src: url(/fonts/Vazir-Light.eot?06e0fe52d08623f11150caeb89139877?#iefix) format('embedded-opentype'),
+    url(/fonts/Vazir-Light.woff2?04e1640231988684a93b23a798623524) format('woff2'),
+    url(/fonts/Vazir-Light.woff?9eec7bb9ce6b32f0da6d9d9a7ea2bbcb) format('woff'),
+    url(/fonts/Vazir-Light.ttf?dac59184b319f21c58c7c83a69458e8f) format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url(/fonts/Vazir-Medium.eot?43e6c88cadb895e831b2da4ac3c9f066);
+    src: url(/fonts/Vazir-Medium.eot?43e6c88cadb895e831b2da4ac3c9f066?#iefix) format('embedded-opentype'),
+    url(/fonts/Vazir-Medium.woff2?b183872718018f71ceff0ed66fbb4fe5) format('woff2'),
+    url(/fonts/Vazir-Medium.woff?4fcac6160bf7dd8fdac06f9a21ddd6a1) format('woff'),
+    url(/fonts/Vazir-Medium.ttf?82c1133e14b3fb15466febae538d47fd) format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url(/fonts/Vazir-Thin.eot?3fc2bef741e8da043f338af7ab07fb73);
+    src: url(/fonts/Vazir-Thin.eot?3fc2bef741e8da043f338af7ab07fb73?#iefix) format('embedded-opentype'),
+    url(/fonts/Vazir-Thin.woff2?7b6e821c507cd937908973ee413785d9) format('woff2'),
+    url(/fonts/Vazir-Thin.woff?7882bfe59ed0331bfc047fdc26448842) format('woff'),
+    url(/fonts/Vazir-Thin.ttf?e3f8d0d5d88398864b3fefcb44d9130a) format('truetype');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url(/fonts/Vazir-Black.eot?1a73cdb907a40c5c61f8f0966fbfbf3c);
+    src: url(/fonts/Vazir-Black.eot?1a73cdb907a40c5c61f8f0966fbfbf3c?#iefix) format('embedded-opentype'),
+    url(/fonts/Vazir-Black.woff2?9aa8433af81dbd4c56b5cd2de2cc5824) format('woff2'),
+    url(/fonts/Vazir-Black.woff?0bbd080ff955d584373f43f56bd50b1c) format('woff'),
+    url(/fonts/Vazir-Black.ttf?18bc4ee7ec15c060c871ff73193a5b6b) format('truetype');
+    font-weight: 900;
+} 
+
+/*---------------------------------- End of fonts ---------------------------------- */
+
+body {
+    font-family: 'Vazir', sans-serif !important;
+}
+
+
+
+ body {
+     font-family: Vazirmatn, sans-serif;
+}
+
 @charset "UTF-8"; /*!
  * Bootstrap  v5.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -10855,7 +10927,4 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
-}
-body {
-  font-family: Vazirmatn, sans-serif;
 }

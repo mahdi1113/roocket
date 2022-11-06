@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\ActiveCode;
+use App\Notifications\LoginToWebsitNotification;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -59,6 +60,8 @@ class LoginController extends Controller
                 return redirect(route('2fa.token'));
             }
         }
-        return false;
+
+        $user->notify(new LoginToWebsitNotification());
+        
     }
 }
